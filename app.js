@@ -58,16 +58,14 @@ const displayCardNewsCategory = (users) => {
            
            <div  class="row g-0">
            <div class="col-md-4">
-             <img src="${
-               user.thumbnail_url
-             }" class="img-fluid rounded-start" alt="...">
+             <img src="${user.thumbnail_url
+      }" class="img-fluid rounded-start" alt="...">
            </div>
            <div class="col-md-8">
              <div class="card-body">
                <h5 class="card-title">${user.title}</h5>
-               <p class="card-text"><small class="text-muted">${
-                 user.details
-               }</small></p>
+               <p class="card-text"><small class="text-muted">${user.details.slice(0, 500)
+               } <a href="#">Show More...</a> </small></p>
                <div class="container text-center">
               <div class="row">
               <div class="col-md-8  d-flex">
