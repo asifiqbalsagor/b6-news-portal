@@ -38,7 +38,9 @@
                 href="#"
                 >News</a
               >
-              <a class="nav-link mx-3 my-0 fw-bold" href="question-ans.html">Blog</a>
+              <a class="nav-link mx-3 my-0 fw-bold" href="question-ans.html"
+                >Blog</a
+              >
             </div>
           </div>
         </nav>
@@ -47,6 +49,14 @@
     <!-- header section end -->
     <!-- main section start  -->
     <main>
+      <!-- input flied start  -->
+      <section class="container bg-primary bg-opacity-25 text-center">
+        <p class="px-3 py-2 fw-bolder">
+          <span id="items-count" class="fs-6">0</span> Items found for category
+          <span id="items-name" class="fs-6"></span>
+        </p>
+      </section>
+      <!-- input flied end -->
       <!-- category section start  -->
       <div class="container my-3">
         <nav class="navbar navbar-expand-lg bg-light">
@@ -72,6 +82,7 @@
         </nav>
       </div>
       <!-- category section end -->
+
       <!-- card section added -->
       <section id="card-container" class="container"></section>
       <!-- card section end -->
@@ -101,8 +112,7 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="modal-title">
-                </h5>
+                <h5 class="modal-title" id="modal-title"></h5>
                 <button
                   type="button"
                   class="btn-close"

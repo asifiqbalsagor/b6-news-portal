@@ -9,8 +9,8 @@ const loadCategoryName = async () => {
   }
 };
 
-
 const displayAllCategoryName = (categories) => {
+  console.log(categories.length);
   const categoryContainer = document.getElementById("category-container");
   categories.forEach((category) => {
     const { category_id, category_name } = category;
@@ -28,10 +28,6 @@ const displayAllCategoryName = (categories) => {
   });
 };
 
-
-
-
-
 const loadNewsByCategory = async (category_id) => {
   const url = ` https://openapi.programming-hero.com/api/news/category/${category_id}`;
   try {
@@ -48,8 +44,13 @@ const displayCardNewsCategory = (users) => {
   const cardContainer = document.getElementById("card-container");
   toggleSpinner(true);
   cardContainer.textContent = "";
+  const noData = document.getElementById("items-count");
+  const number = users.length;
+  noData.innerText = `${
+    number <= 0 ? "No data found" : number + "items Found"
+  }`;
   for (const user of users) {
-    console.log(user);
+    // console.log(user);
     const cardDiv = document.createElement("div");
     cardDiv.classList.add("card");
     cardDiv.classList.add("mb-3");
@@ -58,14 +59,17 @@ const displayCardNewsCategory = (users) => {
            
            <div  class="row g-0">
            <div class="col-md-4">
-             <img src="${user.thumbnail_url
-      }" class="img-fluid rounded-start" alt="...">
+             <img src="${
+               user.thumbnail_url
+             }" class="img-fluid  w-100 " alt="...">
            </div>
            <div class="col-md-8">
              <div class="card-body">
-               <h5 class="card-title">${user.title}</h5>
-               <p class="card-text"><small class="text-muted">${user.details.slice(0, 500)
-               } <a href="#">Show More...</a> </small></p>
+               <h3 class="card-title my-3 mb-3">${user.title}</h3>
+               <p class="card-text m-3"><small class="text-muted">${user.details.slice(
+                 0,
+                 500
+               )} <a href="#">Show More...</a> </small></p>
                <div class="container text-center">
               <div class="row">
               <div class="col-md-8  d-flex">
@@ -109,11 +113,6 @@ const displayCardNewsCategory = (users) => {
   }
   toggleSpinner(false);
 };
-
-
-
-
-
 
 const toggleSpinner = (isLoading) => {
   const loaderSection = document.getElementById("loader-Spinner");
@@ -173,4 +172,5 @@ const displayNewsModal = (news) => {
 `;
 };
 
+loadNewsByCategory("01");
 loadCategoryName();
