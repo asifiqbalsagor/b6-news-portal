@@ -155,8 +155,8 @@ const displayNewsModal = (news) => {
 
 <p class="m-4"><i class="fa-solid fa-eye"></i></p>
 <p class="card-text m-4">${
-    news.rating.number ? news.rating.number : "Rating not fund"
-  }M</p>
+    news.total_view ? news.total_view : "Rating not fund"
+  }</p>
 
 <div class="d-flex m-4">
 
