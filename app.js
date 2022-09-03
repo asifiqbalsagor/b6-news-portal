@@ -126,6 +126,17 @@ const toggleSpinner = (isLoading) => {
   }
 };
 
+const loadPost = async (id) => {
+  const url = ` https://openapi.programming-hero.com/api/news/${id}`;
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    displayNewsModal(data.data[0]);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 
 
 loadCategoryName();
