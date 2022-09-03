@@ -32,6 +32,17 @@ const displayAllCategoryName = (categories) => {
 
 
 
+const loadNewsByCategory = async (category_id) => {
+  const url = ` https://openapi.programming-hero.com/api/news/category/${category_id}`;
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    displayCardNewsCategory(data.data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 
 
 loadCategoryName();
