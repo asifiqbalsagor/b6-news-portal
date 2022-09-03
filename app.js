@@ -32,4 +32,6 @@ const displayAllCategoryName = (categories) => {
 
 
 
+
+
 loadCategoryName();
