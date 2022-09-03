@@ -137,6 +137,42 @@ const loadPost = async (id) => {
   }
 };
 
+const displayNewsModal = (news) => {
+  console.log(news);
+  const modalTitle = document.getElementById("modal-title");
 
+  modalTitle.innerText = `${news.title ? news.title : "Title not found"}`;
+  const modalBody = document.getElementById("modal-body");
+  modalBody.innerHTML = `
+
+<img class="img-fluid" src="${news.image_url}" alt="">
+<p>${news.details ? news.details : "Details not found"}</p>
+
+<div class="col-md-8  d-flex">
+<img src="${
+    news.author.img
+  }" class="img-fluid author_custom h- rounded-circle" alt="...">
+<b class="card-title m-4">${
+    news.author.name ? news.author.name : "Name not found!"
+  }</b>
+
+<p class="m-4"><i class="fa-solid fa-eye"></i></p>
+<p class="card-text m-4">${
+    news.rating.number ? news.rating.number : "Rating not fund"
+  }M</p>
+
+<div class="d-flex m-4">
+
+<i class="fa-regular fa-star-half-stroke"></i>
+<i class="fa-regular fa-star"></i>
+<i class="fa-regular fa-star"></i>
+<i class="fa-regular fa-star"></i>
+<i class="fa-regular fa-star"></i>
+</div>
+
+
+</div>
+`;
+};
 
 loadCategoryName();
