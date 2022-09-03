@@ -86,8 +86,8 @@ const displayCardNewsCategory = (users) => {
               }</p>
               <p class="m-2"><i class="fa-solid fa-eye"></i></p>
               <p class="card-text m-2">${
-                user.rating.number ? user.rating.number : "No data ableable"
-              }M</p>
+                user.total_view ? user.total_view : "No data ableable"
+              }</p>
              </div>
              <div class="col ">
              <div class="d-flex m-2">
