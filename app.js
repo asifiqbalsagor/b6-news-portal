@@ -43,6 +43,18 @@ const loadNewsByCategory = async (category_id) => {
   }
 };
 
+const displayCardNewsCategory = (users) => {
+  console.log(users);
+  const cardContainer = document.getElementById("card-container");
+  toggleSpinner(true);
+  cardContainer.textContent = "";
+  for (const user of users) {
+    console.log(user);
+    const cardDiv = document.createElement("div");
+    cardDiv.classList.add("card");
+    cardDiv.classList.add("mb-3");
 
+  }
+}
 
 loadCategoryName();
