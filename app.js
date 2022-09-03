@@ -117,6 +117,15 @@ const displayCardNewsCategory = (users) => {
 
 
 
+const toggleSpinner = (isLoading) => {
+  const loaderSection = document.getElementById("loader-Spinner");
+  if (isLoading) {
+    loaderSection.classList.remove("d-none");
+  } else {
+    loaderSection.classList.add("d-none");
+  }
+};
+
 
 
 loadCategoryName();
