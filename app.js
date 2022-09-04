@@ -79,11 +79,7 @@ const displayCardNewsCategory = (users) => {
               <b class="card-title m-2">${
                 user.author.name ? user.author.name : "No data ableable"
               }</b>
-              <p class="card-text m-2">${
-                user.author.published_date
-                  ? user.author.published_date
-                  : "No data ableable"
-              }</p>
+           
               <p class="m-2"><i class="fa-solid fa-eye"></i></p>
               <p class="card-text m-2">${
                 user.total_view ? user.total_view : "No data ableable"
